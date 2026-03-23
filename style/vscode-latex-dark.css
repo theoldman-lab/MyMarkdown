@@ -1,0 +1,393 @@
+/*
+ * VSCode Markdown Preview Theme - LaTeX Dark
+ * Based on Typora's latex-dark.css
+ * Adapted for VSCode Markdown Preview
+ */
+
+:root {
+  /* == 字体设置 == */
+  --base-Latin-font: "Latin Modern Roman", "Latin Modern Roman 10", "Times New Roman", Times, serif;
+  --base-Chinese-font: "Noto Serif CJK SC", "Source Han Serif SC", "STSong", "SimSun", serif;
+  --base-font-size: 18px;
+  
+  /* 引言字体 */
+  --quote-font: "Latin Modern Roman", "Times New Roman", Times, "Noto Serif CJK SC", serif;
+  --quote-font-size: 1.05em;
+  
+  /* 代码字体 */
+  --code-font: "Latin Modern Mono", "Courier New", Consolas, "DejaVu Sans Mono", monospace;
+  
+  /* 标题字体 */
+  --heading-Latin-font: "Latin Modern Roman", "Times New Roman", Times, serif;
+  --heading-Chinese-font: "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+  
+  /* 标题字体大小 */
+  --h1-font-size: 1.9em;
+  --h2-font-size: 1.5em;
+  --h3-font-size: 1.25em;
+  --h4-font-size: 1.15em;
+  --h5-font-size: 1.10em;
+  --h6-font-size: 1.05em;
+  
+  /* 粗体字重 */
+  --strong-weight: 900;
+  
+  /* 行高 */
+  --base-line-height: 1.618;
+  
+  /* == 颜色设置 == */
+  --bg-color: #1e1e1e;
+  --text-color: #dcdcdc;
+  --link-color: #8bb1f9;
+  --link-hover-color: #b8d8ff;
+  --code-bg-color: #161616;
+  --code-color: #8bb1f9;
+  --border-color: #888888;
+  --selection-bg-color: #9ab1cf;
+  --selection-text-color: #161616;
+  
+  /* 表格颜色 */
+  --table-border-color: #dcdcdc;
+  --table-header-border-color: #dcdcdc;
+  
+  /* 引用块颜色 */
+  --blockquote-border-color: hsl(0, 0%, 70%);
+}
+
+/* == 基础样式 == */
+body {
+  font-family: var(--base-Latin-font), var(--base-Chinese-font);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* == 链接 == */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* == 选中文字 == */
+::selection {
+  background-color: var(--selection-bg-color);
+  color: var(--selection-text-color);
+}
+
+/* == 段落 == */
+p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+/* == 水平分割线 == */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 2em 0;
+}
+
+/* == 图片 == */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+/* == 粗体 == */
+strong {
+  font-weight: var(--strong-weight);
+}
+
+/* == 标题 == */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-Latin-font), var(--heading-Chinese-font);
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+  color: #aaaaaa;
+}
+
+/* == 代码 == */
+/* 行内代码 */
+code {
+  font-family: var(--code-font);
+  font-size: 0.9em;
+  padding: 0.2em 0.4em;
+  margin: 0 2px;
+  background-color: var(--code-bg-color);
+  color: var(--code-color);
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 代码块 */
+pre {
+  font-family: var(--code-font);
+  font-size: 0.9em;
+  line-height: 1.5;
+  background-color: var(--code-bg-color);
+  padding: 16px;
+  border-radius: 4px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 1em 0;
+}
+
+pre code {
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+}
+
+/* == 引用块 == */
+blockquote {
+  font-family: var(--quote-font);
+  font-size: var(--quote-font-size);
+  margin: 1em 0;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  border-left: 4px solid var(--blockquote-border-color);
+  color: #cccccc;
+}
+
+blockquote p {
+  margin: 0.5em 0;
+}
+
+blockquote blockquote {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* == 列表 == */
+ul, ol {
+  padding-left: 2em;
+  margin: 1em 0;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+li {
+  margin: 0.5em 0;
+}
+
+li > ul,
+li > ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 任务列表 */
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+/* == 表格 == */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1.5em auto;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  display: table;
+}
+
+table thead {
+  border-bottom: 1px solid var(--table-header-border-color);
+  font-weight: var(--strong-weight);
+}
+
+table th {
+  padding: 8px 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+table td {
+  padding: 8px 16px;
+  text-align: left;
+}
+
+table tr {
+  border-top: 1px solid var(--table-border-color);
+}
+
+table tr:nth-child(2n) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 三线表样式 */
+table {
+  border-top: 1.2pt solid var(--table-border-color);
+  border-bottom: 1.2pt solid var(--table-border-color);
+}
+
+table thead {
+  border-bottom: 0.5pt solid var(--table-header-border-color);
+}
+
+table tr {
+  border-top: none;
+}
+
+/* == 数学公式 == */
+.katex,
+.katex-display {
+  font-size: 1em;
+}
+
+/* == 脚注 == */
+.footnotes {
+  font-size: 0.9em;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border-color);
+}
+
+.footnotes ol {
+  padding-left: 1.5em;
+}
+
+.footnotes li {
+  margin: 0.5em 0;
+}
+
+/* == 语法高亮（VSCode Markdown Preview 默认支持） == */
+/* 以下为常见语法高亮颜色的补充 */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #546e7a;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #e9eded;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #f77669;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #c3e88d;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #80cbc4;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c792ea;
+}
+
+.token.function,
+.token.class-name {
+  color: #82b1ff;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #decb6b;
+}
+
+/* == VSCode 特定优化 == */
+/* 确保在 VSCode 中正确渲染 */
+.vscode-dark {
+  /* 暗色主题特定调整 */
+}
+
+.vscode-light {
+  /* 如果需要在亮色主题下使用，可以在此覆盖颜色 */
+}
+
+/* 打印样式 */
+@media print {
+  body {
+    padding: 0;
+    max-width: none;
+    background-color: transparent;
+  }
+  
+  pre, code {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
