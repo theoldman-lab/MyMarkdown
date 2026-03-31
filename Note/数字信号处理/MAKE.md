@@ -8,4 +8,4 @@
 
 !include 拉普拉斯变换.md
 
-!include z 变换.md
+!include Z变换.md
