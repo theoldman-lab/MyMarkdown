@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp *)",
+      "Bash(python3 *)",
+      "Bash(sed *)",
+      "Bash(rm *)"
+    ]
+  },
+  "$version": 3
+}
